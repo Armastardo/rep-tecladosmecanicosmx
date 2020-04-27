@@ -54,20 +54,46 @@ function generateCards(bbdd){
     profilePicture.className = "img-vendedor"
 
     reputation = document.createElement("div")
+    reputation.className = "reputation"
 
-    confirmed = document.createElement("p")
-    confirmed.innerHTML = "<b>Ventas confirmadas:</b> "+bbdd[id]["confirmed"];
-    positive = document.createElement("p")
-    positive.innerHTML = "<b>Positivas:</b> "+bbdd[id]["positive"];
-    negative = document.createElement("p")
-    negative.innerHTML = "<b>Negativas:</b> "+bbdd[id]["negative"];
+    totalRep = document.createElement("p")
+    totalRep.className = "seller-rep";
+    rep = bbdd[id]["positive"]*100/bbdd[id]["confirmed"]
+    totalRep.innerHTML = "<b>Reputación:</b> "+rep+"%";  
 
-    reputation.appendChild(confirmed)
-    reputation.appendChild(positive)
-    reputation.appendChild(negative)
+    repDesc = document.createElement("span")
+    repDesc.innerHTML = "De "+bbdd[id]["confirmed"]+" ventas, "+bbdd[id]["positive"]+" han sido positivas y "+bbdd[id]["negative"]+" negativas.";
+    repDesc.className = "text-muted rep-desc"
+
+    links = document.createElement("div");
+    links.className = "row text-center seller-links"
+
+    facebook = document.createElement("a");
+    facebook.className = "col-4";
+    facebook.setAttribute("href", bbdd[id]["profile"])
+    facebook.innerHTML = "<i class='link-icon material-icons'>account_circle</i><br/><span class='link-name'>Facebook</span>";
+
+    work = document.createElement("a");
+    work.className = "col-4";
+    work.setAttribute("href", bbdd[id]["work"]);
+    work.innerHTML = "<i class='link-icon material-icons'>camera_alt</i><br/><span class='link-name'>Galería</span>";
+
+    evidence = document.createElement("a");
+    evidence.className = "col-4";
+    evidence.setAttribute("href", bbdd[id]["evidence"]);
+    evidence.innerHTML = "<i class='link-icon material-icons'>archive</i><br/><span class='link-name'>Evidencias</span>";
+
+
+    links.appendChild(facebook);
+    links.appendChild(work);
+    links.appendChild(evidence);
+
+    reputation.appendChild(totalRep);
+    reputation.appendChild(repDesc);
 
     cardBody.appendChild(profilePicture);
     cardBody.appendChild(reputation);
+    cardBody.appendChild(links);
 
     cardWrapper.appendChild(sellerName);
     cardWrapper.appendChild(cardBody);

@@ -19,3 +19,31 @@
 	margin-right: auto;
 	margin-bottom: 10px;
 }
+
+.reputation{
+	margin-top: 15px;
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: 120%;
+}
+
+.seller-rep{
+	margin-bottom: -10px;
+}
+
+.rep-desc{
+	font-size: 60%;
+}
+
+.seller-links{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.link-icon{
+	font-size: 250%;
+}
+
+.link-name{
+	font-size: 60%;
+}
