@@ -68,24 +68,32 @@ function generateCards(bbdd){
     links = document.createElement("div");
     links.className = "row text-center seller-links"
 
+    if(bbdd[seller]["work"] != "null"){
+        offset = "";
+    }else{
+        offset = " offset-2";
+    }
+
     facebook = document.createElement("a");
-    facebook.className = "col-4";
+    facebook.className = "col-4"+offset;
     facebook.setAttribute("href", bbdd[seller]["profile"])
     facebook.innerHTML = "<i class='link-icon material-icons'>account_circle</i><br/><span class='link-name'>Facebook</span>";
 
-    work = document.createElement("a");
-    work.className = "col-4";
-    work.setAttribute("href", bbdd[seller]["work"]);
-    work.innerHTML = "<i class='link-icon material-icons'>camera_alt</i><br/><span class='link-name'>Galería</span>";
+    links.appendChild(facebook);
+
+    if(bbdd[seller]["work"] != "null"){
+        work = document.createElement("a");
+        work.className = "col-4";
+        work.setAttribute("href", bbdd[seller]["work"]);
+        work.innerHTML = "<i class='link-icon material-icons'>camera_alt</i><br/><span class='link-name'>Galería</span>";
+        links.appendChild(work);
+    }
 
     evidence = document.createElement("a");
     evidence.className = "col-4";
     evidence.setAttribute("href", bbdd[seller]["evidence"]);
     evidence.innerHTML = "<i class='link-icon material-icons'>archive</i><br/><span class='link-name'>Evidencias</span>";
-
-
-    links.appendChild(facebook);
-    links.appendChild(work);
+    
     links.appendChild(evidence);
 
     reputation.appendChild(totalRep);
