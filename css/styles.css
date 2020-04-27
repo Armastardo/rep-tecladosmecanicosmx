@@ -1,0 +1,21 @@
+/* Sección de vendedores */
+
+#vendedores{
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+/* Tarjetas de los vendedores */
+
+.card-header{
+	text-align: center;
+	font-weight: 700;
+	font-size: 120%;
+}
+
+.img-vendedor{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+}
