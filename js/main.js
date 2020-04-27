@@ -58,11 +58,11 @@ function generateCards(bbdd){
 
     totalRep = document.createElement("p")
     totalRep.className = "seller-rep";
-    rep = bbdd[id]["positive"]*100/bbdd[id]["confirmed"]
+    rep = bbdd[seller]["positive"]*100/bbdd[seller]["confirmed"]
     totalRep.innerHTML = "<b>Reputación:</b> "+rep+"%";  
 
     repDesc = document.createElement("span")
-    repDesc.innerHTML = "De "+bbdd[id]["confirmed"]+" ventas, "+bbdd[id]["positive"]+" han sido positivas y "+bbdd[id]["negative"]+" negativas.";
+    repDesc.innerHTML = "De "+bbdd[seller]["confirmed"]+" ventas, "+bbdd[seller]["positive"]+" han sido positivas y "+bbdd[seller]["negative"]+" negativas.";
     repDesc.className = "text-muted rep-desc"
 
     links = document.createElement("div");
@@ -70,17 +70,17 @@ function generateCards(bbdd){
 
     facebook = document.createElement("a");
     facebook.className = "col-4";
-    facebook.setAttribute("href", bbdd[id]["profile"])
+    facebook.setAttribute("href", bbdd[seller]["profile"])
     facebook.innerHTML = "<i class='link-icon material-icons'>account_circle</i><br/><span class='link-name'>Facebook</span>";
 
     work = document.createElement("a");
     work.className = "col-4";
-    work.setAttribute("href", bbdd[id]["work"]);
+    work.setAttribute("href", bbdd[seller]["work"]);
     work.innerHTML = "<i class='link-icon material-icons'>camera_alt</i><br/><span class='link-name'>Galería</span>";
 
     evidence = document.createElement("a");
     evidence.className = "col-4";
-    evidence.setAttribute("href", bbdd[id]["evidence"]);
+    evidence.setAttribute("href", bbdd[seller]["evidence"]);
     evidence.innerHTML = "<i class='link-icon material-icons'>archive</i><br/><span class='link-name'>Evidencias</span>";
 
 
