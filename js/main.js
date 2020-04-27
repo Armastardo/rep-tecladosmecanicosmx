@@ -35,7 +35,7 @@ function generateCards(bbdd){
   for(seller in bbdd){
 
     wrapper = document.createElement("div");
-    wrapper.className = "col-lg-4 col-md-6 col-sm-12"
+    wrapper.className = "col-xl-3 col-lg-4 col-md-6 col-sm-12"
 
     cardWrapper = document.createElement("div");
     cardWrapper.className = "card";
