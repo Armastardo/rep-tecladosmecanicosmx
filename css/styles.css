@@ -7,6 +7,10 @@
 
 /* Tarjetas de los vendedores */
 
+.card{
+	margin-bottom: 10px;
+}
+
 .card-header{
 	text-align: center;
 	font-weight: 700;
@@ -34,6 +38,7 @@
 
 .rep-desc{
 	font-size: 60%;
+	line-height: 0;
 }
 
 .seller-links{
