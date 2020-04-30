@@ -43,6 +43,13 @@ body{
 	width: 75%;
 }
 
+.medalla{
+	position: absolute;
+	right: 10px;
+	width: 40px;
+	height: auto;
+}
+
 .reputation{
 	margin-top: 15px;
 	margin-bottom: 20px;

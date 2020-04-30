@@ -20,7 +20,7 @@ $.getJSON( "https://spreadsheets.google.com/feeds/cells/1e3bj7TWLGciJm8A1z_x8qor
         bbdd[id]["negative"]     = xls[i+5]["content"]["$t"];
         bbdd[id]["evidence"]     = xls[i+6]["content"]["$t"];
         bbdd[id]["work"]         = xls[i+7]["content"]["$t"];
-        bbdd[id]["comments"]     = xls[i+8]["content"]["$t"];
+        bbdd[id]["medal"]        = xls[i+8]["content"]["$t"];
         i+=base;
     }
 
@@ -47,6 +47,8 @@ function generateCards(bbdd){
     cardBody = document.createElement("div");
     cardBody.className = "card-body";
 
+    pictureContainer = document.createElement("div");
+
     profilePicture = document.createElement("img");
     profileUrl = bbdd[seller]["profile"].replace("https://www.facebook.com/", "").replace("profile.php?id=", "");
     profileUrl = "http://graph.facebook.com/"+profileUrl+"/picture?type=large";
@@ -59,6 +61,7 @@ function generateCards(bbdd){
     totalRep = document.createElement("p")
     totalRep.className = "seller-rep";
     rep = bbdd[seller]["positive"]*100/bbdd[seller]["confirmed"]
+
     totalRep.innerHTML = "<b>Reputación:</b> "+rep+"%";  
 
     repDesc = document.createElement("span")
@@ -99,7 +102,20 @@ function generateCards(bbdd){
     reputation.appendChild(totalRep);
     reputation.appendChild(repDesc);
 
-    cardBody.appendChild(profilePicture);
+    pictureContainer.appendChild(profilePicture)
+
+
+    if(bbdd[seller]["medal"] == "recomendado"){
+        medal = document.createElement("img");
+        medal.setAttribute("src", "media/badge.png");
+        medal.setAttribute("data-toggle", "tooltip");
+        medal.setAttribute("data-placement", "left");
+        medal.setAttribute("title", "Este es un vendedor recomendado. Está autorizado a vender por depósito directo.");
+        medal.className = "medalla";
+        pictureContainer.appendChild(medal);
+    }
+
+    cardBody.appendChild(pictureContainer);
     cardBody.appendChild(reputation);
     cardBody.appendChild(links);
 
@@ -110,6 +126,12 @@ function generateCards(bbdd){
 
     grid.appendChild(wrapper);
 
-  }
+    }
+    $(function() {
+      $('[data-toggle="tooltip"]').tooltip({
+        html: true
+      });
+    });
+
 
 }
