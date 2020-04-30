@@ -3,6 +3,23 @@ var bbdd = {};
 
 base = 9
 
+function onlyRecommended(){
+    sellers = document.getElementById("vendedores").getElementsByTagName("div");
+    for( i = 0; i<sellers.length; i+=7){
+        console.log(sellers[i].getAttribute("filters"));
+        if(sellers[i].getAttribute("filters") != "recomendado"){
+            sellers[i].style.display = "none";
+        }
+    }
+}
+
+function showAll(){
+    sellers = document.getElementById("vendedores").getElementsByTagName("div");;
+    for( i = 0; i<sellers.length; i+=7){
+        sellers[i].style.display = "";
+    }   
+}
+
 $.getJSON( "https://spreadsheets.google.com/feeds/cells/1e3bj7TWLGciJm8A1z_x8qormEEX8XthI6urzw_xt070/1/public/full?alt=json", function( data ) {
     $.each( data, function( key, val ) {
         xls[key] = val;
@@ -36,6 +53,7 @@ function generateCards(bbdd){
 
     wrapper = document.createElement("div");
     wrapper.className = "col-lg-4 col-md-6 col-sm-12"
+    wrapper.setAttribute("filters", bbdd[seller]["medal"])
 
     cardWrapper = document.createElement("div");
     cardWrapper.className = "card";
