@@ -1,3 +1,19 @@
+:root{
+	--main-color: #783BB8;
+}
+
+body{
+	font-family: 'Lato', sans-serif;
+}
+
+.navbar{
+	background: var(--main-color);
+}
+
+.navbar-brand{
+	font-weight: 700;
+}
+
 /* Sección de vendedores */
 
 #vendedores{
@@ -15,6 +31,8 @@
 	text-align: center;
 	font-weight: 700;
 	font-size: 120%;
+	background-color: var(--main-color);
+	color: white;
 }
 
 .img-vendedor{
@@ -43,7 +61,10 @@
 
 .seller-links{
 	margin-top: 10px;
-	margin-bottom: 10px;
+}
+
+.card a{
+	color: var(--main-color) !important;
 }
 
 .link-icon{
