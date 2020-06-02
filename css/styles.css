@@ -12,13 +12,13 @@ body{
 
 .navbar{
 	background-color: var(--main-color);
-	padding: 50px;
-	padding-bottom: 95px;
+	padding-top: 50px;
+	padding-bottom: 155px;
 }
 
 .navbar-brand{
 	font-weight: 300;
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: bold;
 }
 
@@ -29,7 +29,11 @@ body{
 }
 
 .filtros {
-	margin-top: -55px;
+	margin-top: -75px;
+}
+
+.header {
+	padding: 50px;
 }
 
 /* Sección de vendedores */
@@ -55,6 +59,7 @@ body{
 	margin-bottom: 10px;
 	border: none;
 	border-radius: 0px;
+	box-shadow: 0 0 2px 0 rgba(58, 58, 58, 0.2);
 }
 
 .card-header{
