@@ -1,21 +1,35 @@
 :root{
-	--main-color: #783BB8;
+	--main-color: 		#333333;
+	--secondary-color: 	#EDEDED;
 }
 
 body{
-	font-family: 'Lato', sans-serif;
+	font-family: 'Roboto', sans-serif;
+	background-color: var(--secondary-color)
 }
 
+/* Navegación */
+
 .navbar{
-	background: var(--main-color);
+	background-color: var(--main-color);
+	padding: 50px;
+	padding-bottom: 95px;
 }
 
 .navbar-brand{
-	font-weight: 700;
+	font-weight: 300;
+	font-size: 18px;
+	font-weight: bold;
 }
 
-.filtros{
-	padding-top: 40px;
+.nav-small {
+	font-size: 14px;
+	font-weight: 300;
+	color: white !important;
+}
+
+.filtros {
+	margin-top: -55px;
 }
 
 /* Sección de vendedores */
@@ -25,18 +39,30 @@ body{
 	padding-bottom: 80px;
 }
 
+.btn {
+	background-color: var(--main-color);
+	color: white;
+}
+
+.btn:hover {
+	color: white;
+}
+
+
 /* Tarjetas de los vendedores */
 
 .card{
 	margin-bottom: 10px;
+	border: none;
+	border-radius: 0px;
 }
 
 .card-header{
 	text-align: center;
 	font-weight: 700;
-	font-size: 120%;
 	background-color: var(--main-color);
 	color: white;
+	border-radius: 0px !important;
 }
 
 .img-vendedor{
