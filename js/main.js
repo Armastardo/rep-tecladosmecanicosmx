@@ -123,10 +123,10 @@ function generateCards(bbdd){
 
     if(bbdd[seller]["medal"] == "recomendado"){
         medal = document.createElement("img");
-        medal.setAttribute("src", "media/badge.png");
+        medal.setAttribute("src", "media/badge.svg");
         medal.setAttribute("data-toggle", "tooltip");
         medal.setAttribute("data-placement", "left");
-        medal.setAttribute("title", "Este es un vendedor recomendado. Está autorizado a vender por depósito directo.");
+        medal.setAttribute("title", "Este es un vendedor recomendado. Está respaldado por los admins y moderadores del grupo.");
         medal.className = "medalla";
         pictureContainer.appendChild(medal);
     }
