@@ -68,9 +68,7 @@ function generateCards(bbdd){
     pictureContainer = document.createElement("div");
 
     profilePicture = document.createElement("img");
-    profileUrl = bbdd[seller]["profile"].replace("https://www.facebook.com/", "").replace("profile.php?id=", "");
-    profileUrl = "http://graph.facebook.com/"+profileUrl+"/picture?type=large";
-    profilePicture.setAttribute("src", profileUrl);
+    profilePicture.setAttribute("src", "media/"+seller+".png");
     profilePicture.className = "img-vendedor"
 
     reputation = document.createElement("div")
