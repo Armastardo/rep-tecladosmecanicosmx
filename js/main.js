@@ -78,7 +78,7 @@ function generateCards(bbdd){
     totalRep.className = "seller-rep";
     rep = bbdd[seller]["positive"]*100/bbdd[seller]["confirmed"]
 
-    totalRep.innerHTML = "<b>Reputación:</b> "+rep+"%";  
+    totalRep.innerHTML = "<b>Reputación:</b> "+rep.toFixed(2)+"%";  
 
     repDesc = document.createElement("span")
     repDesc.innerHTML = "De "+bbdd[seller]["confirmed"]+" ventas, "+bbdd[seller]["positive"]+" han sido positivas y "+bbdd[seller]["negative"]+" negativas.";
